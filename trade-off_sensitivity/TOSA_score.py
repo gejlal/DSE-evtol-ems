@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 #Reliability scores
 rs_concept_1 = np.array([5, 4, 4, 4, 5, 5, 4])
-rs_concept_2 = np.array([4, 3, 3, 3, 4, 4, 3])
+rs_concept_2 = np.array([4, 3, 3, 3, 3, 3, 3])
 rs_concept_3 = np.array([3, 3, 1, 4, 2, 4, 3])
 
 #Maintanability scores
@@ -45,9 +45,9 @@ unc_2 = np.sqrt((wr**2)*(rs_std_2**2) + (wm**2)*(ms_std_2**2))
 unc_3 = np.sqrt((wr**2)*(rs_std_3**2) + (wm**2)*(ms_std_3**2))
 
 #final scores from trade-off (no rounding)
-concept_1 = np.array([float(rs_average_1), float(ms_average_1), 5, 1, 3])
+concept_1 = np.array([float(rs_average_1), float(ms_average_1), 5, 1, 2])
 concept_2 = np.array([rs_average_2, ms_average_2, 4, 3, 4])
-concept_3 = np.array([rs_average_3, ms_average_3, 3, 5, 5])
+concept_3 = np.array([rs_average_3, ms_average_3, 3, 5, 4])
 
 
 #averaged scores (these values will vary from the ones in the trade-off, since they are not rounded)
@@ -59,6 +59,7 @@ concept_3_final = float(sum(concept_3 * criteria_weights)) / float(sum(criteria_
 print("Concept 1", concept_1_final, "+/-", unc_1)
 print("Concept 2", concept_2_final, "+/-", unc_2)
 print("Concept 3", concept_3_final, "+/-", unc_3)
+
 
 data_1 = np.array([concept_1_final + unc_1, concept_1_final, concept_1_final - unc_1])
 data_2 = np.array([concept_2_final + unc_2, concept_2_final, concept_2_final - unc_2])

@@ -46,9 +46,9 @@ percentage_weights_10 = to_weights_10 / total_weight_10
 
 
 #scores from trade-off (do not change these)
-concept_1_scores = np.array([4, 4, 5, 1, 3])
+concept_1_scores = np.array([4, 4, 5, 1, 2])
 concept_2_scores = np.array([3, 3, 4, 3, 4])
-concept_3_scores = np.array([3, 2, 3, 5, 5])
+concept_3_scores = np.array([3, 2, 3, 5, 4])
 
 #first weights
 concept_1_final = np.sum(percentage_weights * concept_1_scores)
@@ -102,37 +102,40 @@ concept_1_final_10 = np.sum(percentage_weights_10 * concept_1_scores)
 concept_2_final_10 = np.sum(percentage_weights_10 * concept_2_scores)
 concept_3_final_10 = np.sum(percentage_weights_10 * concept_3_scores)
 
-'''
+
 ### plotting the results for visualization
 #Reliability
-plt.figure(figsize=(10, 6))
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], label='Original Weights')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_2, concept_2_final_2, concept_3_final_2], label='Reliability -1')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_3, concept_2_final_3, concept_3_final_3], label='Reliability +1')
+plt.figure(figsize=(6,4))
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], marker='x', label='Original Weights')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_2, concept_2_final_2, concept_3_final_2], marker='x', label='Reliability -1')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_3, concept_2_final_3, concept_3_final_3], marker='x', label='Reliability +1')
 plt.ylabel('Scores')
+plt.title('Reliability')
 plt.legend()
 plt.show()
 plt.close()
 
 #Maintainability
-plt.figure(figsize=(10, 6))
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], label='Original Weights')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_4, concept_2_final_4, concept_3_final_4], label='Maintainability +1')
+plt.figure(figsize=(6,4))
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], marker='x', label='Original Weights')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_4, concept_2_final_4, concept_3_final_4], marker='x', label='Maintainability +1')
 plt.ylabel('Scores')
+plt.title('Maintainability')
 plt.legend()
 plt.show()
 plt.close()
 
 #Controllability
-plt.figure(figsize=(10, 6))
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], label='Original Weights')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_5, concept_2_final_5, concept_3_final_5], label='Controllability -1')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_6, concept_2_final_6, concept_3_final_6], label='Controllability +1')
+plt.figure(figsize=(6,4))
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], marker='x', label='Original Weights')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_5, concept_2_final_5, concept_3_final_5], marker='x', label='Controllability -1')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_6, concept_2_final_6, concept_3_final_6], marker='x', label='Controllability +1')
 plt.ylabel('Scores')
+plt.title('Controllability')
 plt.legend()
 plt.show()
 plt.close()
-'''
+
 
 #Peak power
 plt.figure(figsize=(6, 4))
@@ -140,21 +143,23 @@ plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2
 plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_7, concept_2_final_7, concept_3_final_7], marker='x', label='Peak power -1')
 plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_8, concept_2_final_8, concept_3_final_8], marker='x', label='Peak power +1')
 plt.ylabel('Scores')
-plt.legend(loc = 'lower right')
-plt.show()
-plt.close()
-
-'''
-#Takeoff weight
-plt.figure(figsize=(10, 6))
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], label='Original Weights')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_9, concept_2_final_9, concept_3_final_9], label='Takeoff weight -1')
-plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_10, concept_2_final_10, concept_3_final_10], label='Takeoff weight +1')
-plt.ylabel('Scores')
+plt.title('Peak Power')
 plt.legend()
 plt.show()
 plt.close()
-'''
+
+
+#Takeoff weight
+plt.figure(figsize=(6,4))
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final, concept_2_final, concept_3_final], marker='x', label='Original Weights')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_9, concept_2_final_9, concept_3_final_9], marker='x', label='Takeoff weight -1')
+plt.scatter(['Concept 1', 'Concept 2', 'Concept 3'], [concept_1_final_10, concept_2_final_10, concept_3_final_10], marker='x', label='Takeoff weight +1')
+plt.ylabel('Scores')
+plt.title('Takeoff Weight')
+plt.legend()
+plt.show()
+plt.close()
+
 
 #adding to csv file 
 row_0 = ['Original Weights', concept_1_final, concept_2_final, concept_3_final]
@@ -171,6 +176,7 @@ row_9 = ['Takeoff weight +1', concept_1_final_10, concept_2_final_10, concept_3_
 rows = [row_0, row_1, row_2, row_3, row_4, row_5, row_6, row_7, row_8, row_9]
 
 #making a csv file with all the data
+
 '''
 with open('trade-off_sensitivity/tosa.csv', 'a', newline='') as file:
     writer = csv.writer(file)
@@ -181,7 +187,7 @@ with open('trade-off_sensitivity/tosa.csv', 'a', newline='') as file:
 
 #reading the csv file
 df = pd.read_csv('trade-off_sensitivity/tosa.csv')
-concept_1 = df.iloc[1:11, 1]
-concept_2 = df.iloc[1:11, 2]
-concept_3 = df.iloc[1:11, 3]
+concept_1 = df.iloc[1:, 1]
+concept_2 = df.iloc[1:, 2]
+concept_3 = df.iloc[1:, 3]
 print(concept_1, concept_2, concept_3)
